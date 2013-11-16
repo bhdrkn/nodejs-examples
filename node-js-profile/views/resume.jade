@@ -1,0 +1,13 @@
+//
+   Created by bhdrkn on 09.11.2013.
+extends layout
+
+block container
+    .container.resume
+        h2  My Resume
+        h3  #{portfolio.resume.description}
+        .btn-center
+            a(href='#{portfolio.resume.file}', class='hire-me')
+                i.icon-download
+                | Download Resume
+            h2  #{portfolio.resume.size}

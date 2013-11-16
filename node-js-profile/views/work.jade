@@ -1,0 +1,29 @@
+//
+   Created by bhdrkn on 09.11.2013.
+
+extends layout
+
+block additionaljs
+    script.
+            $(document).ready(function() {
+                $('.fancybox-thumb').fancybox({
+                    helpers :{
+                        type : 'inside'
+                    },
+                    overlay : {
+                        css : {
+                            'background' : 'rgba(1,1,1,0.65)'
+                        }
+                    }
+                });
+            });
+
+block container
+    .container.work
+        h2  My Work
+        ul.work-images
+            each work in portfolio.works
+                li
+                    div
+                        a(class='fancybox-thumb', rel='fancybox-thumb', href='#{work.image}', title='#{work.title}')
+                            img(src='#{work.thumbnail}')

@@ -1,0 +1,96 @@
+//
+   Created by bhdrkn on 09.11.2013.
+doctype 5
+html
+    head
+        block head
+            block meta
+                meta(charset='utf-8')
+                title= title
+                meta(name='description', content='')
+                meta(name='keywords', content='')
+                meta(name='author', content='')
+                meta(name='viewport', content='width=device-width, initial-scale=1.0')
+            block stylesheets
+                link(rel='stylesheet', href='/css/bootstrap.css')
+                link(rel='stylesheet', href='/css/style.css')
+                link(rel='stylesheet', href='/font/css/fontello.css')
+                link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700')
+                link(rel='stylesheet', href='/css/jquery.fancybox.css?v=2.1.5', media='screen')
+            block js
+                script(src='/js/jquery-1.10.1.min.js')
+                script(src='/js/jquery.fancybox.js?v=2.1.5')
+                block additionaljs
+    body
+        block header
+            .navbar
+                .navbar-inner
+                    .container
+                        a(class='btn btn-navbar', data-toogle='collapse', data-target='.nav-collapse'): span.icon-bar
+                        a(class='brand', href='/portfolio/#{portfolio.username}/index.html'):   img(width='64', height='64', src='#{portfolio.profile.thumbnail}')
+                        ui(class='nav nav-collapse pull-right')
+                            li
+                                a(href='/portfolio/#{portfolio.username}/index.html', class=(jadeTemplate==='index' ? 'active' : ' '))
+                                    i.icon-user
+                                    | Profile
+                            li
+                                a(href='/portfolio/#{portfolio.username}/skills.html', class=(jadeTemplate==='skills' ? 'active' : ' '))
+                                    i.icon-trophy
+                                    | Skills
+                            li
+                                a(href='/portfolio/#{portfolio.username}/work.html', class=(jadeTemplate==='work' ? 'active' : ' '))
+                                    i.icon-picture
+                                    | Works
+                            li
+                                a(href='/portfolio/#{portfolio.username}/resume.html', class=(jadeTemplate==='resume' ? 'active' : ' '))
+                                    i.icon-doc-text
+                                    | Resume
+                        .nav-collapse.collapse
+                        // Everything you want hidden at 940px or less, place within here
+        block container
+        block footer
+            .row.social
+                ul.social-icons
+                    li
+                        a(href='#{portfolio.profile.facebook}', target='_blank'): img(src='/img/fb.png', alt='facebook')
+                    li
+                        a(href='#{portfolio.profile.twitter}', target='_blank'): img(src='/img/tw.png', alt='twitter')
+                    li
+                        a(href='#{portfolio.profile.google}', target='_blank'): img(src='/img/go.png', alt='google')
+                    li
+                        a(href='#{portfolio.profile.pinterest}', target='_blank'): img(src='/img/pin.png', alt='pinterest')
+                    li
+                        a(href='#{portfolio.profile.stumbleupon}', target='_blank'): img(src='/img/st.png', alt='stumbleupon')
+                    li
+                        a(href='#{portfolio.profile.dribbble}', target='_blank'): img(src='/img/dr.png', alt='dribbble')
+            .footer
+                .container
+                    p.pull-left
+                        a(href='http://www.example.com')
+                            |http://www.example.com
+                    p.pull-right
+                        a(href='#myModal', role='button', data-toggle='modal')
+                            i.icon-mail
+                            |CONTACT
+        block modal
+            div(id='myModal', class='modal hide fade', tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+                .modal-header
+                    button(type='button', class='close', data-dismiss='modal', aria-hidden='true')
+                        |X
+                    h3#myModalLabel
+                        i.icon-mail
+                        | Contact Me
+                .modal-body
+                    form
+                        input(type='text', placeholder='Your Name')
+                        input(type='text', placeholder='Your Email')
+                        input(type='text', placeholder='Website (Optional)')
+                        textarea(rows='3', style='width: 80%')
+                        br
+                        button(type='submit', class='btn, btn-large')
+                            i.icon-paper-plane
+                            |SUBMIT
+        block javascripts
+            script(src='/js/bootstrap.min.js')
+            script.
+                $('#myModal').modal('hidden')

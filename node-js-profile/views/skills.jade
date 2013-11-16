@@ -1,0 +1,19 @@
+//
+   Created by bhdrkn on 09.11.2013.
+
+extends layout
+
+block container
+    .container.skills
+        h2  My Skills
+        each skill in portfolio.skills
+            .row
+                .span3
+                    div(class='item', style='background: #{skill.color}')
+                        h3  #{skill.shortcode}
+                .span5
+                    h3
+                        | #{skill.fullname}
+                        span    #{skill.value}%
+                    .expand-bg
+                        span(class='expand itemBar #{skill.styleClass}', style='background: #{skill.color}; width: #{skill.value}%')

@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="NPM Install" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files/nodejs/npm.cmd" path-to-js-file="install" working-dir="$PROJECT_DIR$">
+    <browser start="false" url="" with-js-debugger="false" />
+    <RunnerSettings RunnerId="NodeJS.run" />
+    <ConfigurationWrapper RunnerId="NodeJS.run" />
+    <method />
+  </configuration>
+</component>

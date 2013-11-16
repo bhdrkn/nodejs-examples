@@ -1,0 +1,18 @@
+//
+   Created by bhdrkn on 09.11.2013.
+
+extends layout
+
+block container
+    .container.profile
+        .span3
+            img(src='#{portfolio.profile.picture}')
+        .span5
+            h1  #{portfolio.profile.name}
+            h3  #{portfolio.profile.job}
+            p   #{portfolio.profile.description}
+            a(href='mailTo:info@example.com', class='hire-me')
+                i.icon-paper-plane
+                | Hire Me
+
+
